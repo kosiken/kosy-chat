@@ -1,8 +1,8 @@
 // import logo from './logo.svg';
 import React, { useState, useEffect } from 'react'
-import './App.css';
 
-function App() {
+
+function Others() {
   const [connected, setConnected] = useState(false);
 
   const [localMessages, setLocalMessages] = useState('');
@@ -51,7 +51,7 @@ function App() {
   }
 
   const init = async () => {
-    const dataChannelParams = { ordered: true };
+    const dataChannelParams = { reliable: false };
     let lc, rc, localc;
     if (!window.localConnection) window.localConnection = new RTCPeerConnection(null, {
       optional: [{
@@ -165,4 +165,5 @@ function App() {
   );
 }
 
-export default App;
+
+export default Others;
